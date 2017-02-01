@@ -1,0 +1,6 @@
+set completion-ignore-case on
+
+set convert-meta off
+set meta-flag on
+set output-meta on
+

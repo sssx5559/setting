@@ -1,0 +1,6 @@
+escape z
+startup_message off
+defscrollback 2000
+msgwait 10
+hardstatus alwayslastline "[screen %n%?: %t%?] %h"
+
