@@ -1,6 +1,15 @@
+# コマンドキー設定
 escape z
+
+# 起動時にライセンス画面を表示しない
 startup_message off
+
+# スクロールバック行数
 defscrollback 2000
+
+# ステータス行 表示時間
 msgwait 10
+
+# ステータス行を常に表示
 hardstatus alwayslastline "[screen %n%?: %t%?] %h"
 

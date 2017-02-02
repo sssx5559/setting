@@ -35,12 +35,6 @@ hash -d hoge=/long/path/to/hogehoge
 # どういう意味を持つかは `man zshexpn` の FILENAME GENERATION を参照
 setopt extended_glob
 
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
-
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
-
 # <Tab> でパス名の補完候補を表示したあと、
 # 続けて <Tab> を押すと候補からパス名を選択できるようになる
 # 候補を選ぶには <Tab> か Ctrl-N,B,F,P
@@ -56,6 +50,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
+# [Prompt]
 # export PS1='\W$(__git_ps1) $ '
 
 ############### ターミナルのコマンド受付状態の表示変更
@@ -68,6 +63,29 @@ source ~/.git-prompt.sh
 ##############
 #PROMPT='%~ %# '
 
+# PROMPT="%% "
+# RPROMPT="[%/]"
+# PROMPT2="%_%% "
+# SPROMPT="%r is correct? [n,y,a,e]: "
+
+# Change color when root or ssh
+# case 
+# case ${UID} in
+# 0)
+#     PROMPT="%B%{^[[31m%}%/#%{^[[m%}%b "
+#     PROMPT2="%B%{^[[31m%}%_#%{^[[m%}%b "
+#     SPROMPT="%B%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%}%b "
+#     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+#         PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+#     ;;
+# *)
+#     PROMPT="%{^[[31m%}%/%%%{^[[m%} "
+#     PROMPT2="%{^[[31m%}%_%%%{^[[m%} "
+#     SPROMPT="%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%} "
+#     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+#         PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+#     ;;
+# esac
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:*' formats '[%F{green}%b%f]'
@@ -79,3 +97,25 @@ precmd() { vcs_info }
 PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
 RPROMPT='[%~]'
 
+setopt correct
+setopt cdable_vars
+
+export LANG=ja_JP.UTF-8
+
+
+# [History]
+# 同じコマンドをヒストリに残さない
+setopt hist_ignore_all_dups
+
+# スペースから始まるコマンド行はヒストリに残さない
+setopt hist_ignore_space
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+
+# [Git]
+# source ~/.git-completion.zsh
+# source ~/.git-prompt.sh
+# PS1='\W$(__git_ps1) % '
