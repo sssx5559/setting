@@ -1,0 +1,30 @@
+#=============================
+# bitcoin-cli
+#=============================
+# Control
+complete -f -c bitcoin-cli -a getinfo -d 'DEPRECATED. Returns an object containing various state info.'
+complete -f -c bitcoin-cli -a stop -d 'Bitcoin server stopping'
+
+# Wallet
+complete -f -c bitcoin-cli -a getaccount -d 'DEPRECATED. Returns the account associated with the given address.'
+complete -c bitcoin-cli -a backupwallet -d 'Safely copies current wallet file to destination, which can be a directory or a path with filename.'
+complete -c bitcoin-cli -a importaddress -d 'Adds a script (in hex) or address that can be watched as if it were in your wallet but cannot be used to spend.'
+complete -c bitcoin-cli -a importwallet -d 'Imports keys from a wallet dump file (see dumpwallet).'
+complete -c bitcoin-cli -a dumpwallet -d 'Dumps all wallet keys in a human-readable format.'
+complete -f -c bitcoin-cli -a getaddressesbyaccount -d 'DEPRECATED. Returns the list of addresses for the given account.'
+complete -f -c bitcoin-cli -a getbalance -d '"account" minconf include_watchonly'
+complete -f -c bitcoin-cli -a getnewaddress -d '"account"'
+complete -f -c bitcoin-cli -a getreceivedbyaccount -d 'DEPRECATED. Returns the total amount received by addresses with <account> in transactions with at least [minconf] confirmations.'
+complete -f -c bitcoin-cli -a getreceivedbyaddress -d 'Returns the total amount received by the given address in transactions with at least minconf confirmations.'
+complete -f -c bitcoin-cli -a gettransaction -d 'Get detailed information about in-wallet transaction <txid>'
+complete -f -c bitcoin-cli -a getwalletinfo -d 'Returns an object containing various wallet state info.'
+complete -f -c bitcoin-cli -a listtransactions -d '"account" count skip include_watchonly'
+complete -f -c bitcoin-cli -a listaddressgroupings -d 'lists groups of addresses'
+complete -f -c bitcoin-cli -a listunspent -d 'Returns an array of unspent transaction outputs belonging to this wallet.'
+complete -f -c bitcoin-cli -a walletpassphrase -d 'Stores the wallet decryption key in memory for 'timeout' seconds.'
+
+# Blockchain
+complete -f -c bitcoin-cli -a getblock -d 'getblock "blockhash" ( verbose )'
+complete -f -c bitcoin-cli -a getblockchaininfo -d 'Returns an object containing various state info regarding blockchain processing.'
+complete -f -c bitcoin-cli -a getblockcount -d 'Returns the number of blocks in the longest blockchain.'
+complete -f -c bitcoin-cli -a getblockhash -d 'Returns the header hash of a block at the given height in the local best block chain.'
