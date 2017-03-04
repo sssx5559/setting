@@ -25,6 +25,10 @@ autoload -U peco-z-search
 zle -N peco-z-search
 bindkey '^@' peco-z-search
 
+autoload -U peco-src
+zle -N peco-src
+bindkey '^]' peco-src
+
 source ~/zsh/functions/miya-clipboard
 
 #=========================================================
@@ -43,7 +47,7 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-export PATH=$HOME/tool:$HOME/.pyenv/shims:$PATH
+#export PATH=$HOME/tool:$HOME/.pyenv/shims:$PATH
 
 #=========================================================
 # Go
@@ -62,7 +66,7 @@ setopt auto_cd
 # 2つ上、3つ上にも移動できるようにする
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias bx='bx-osx-x64-mainnet'
+#alias bx='bx-osx-x64-mainnet'
 
 # cd したら自動的にpushdする
 setopt auto_pushd
