@@ -1,3 +1,9 @@
+#=========================================================
+# 補完
+#=========================================================
+# マニュアル補完関数置き場
+fpath=(~/zsh/functions $fpath)
+
 # Emacs ライクな操作を有効にする（文字入力中に Ctrl-F,B でカーソル移動など）
 # Vi ライクな操作が好みであれば `bindkey -v` とする
 bindkey -e
@@ -6,6 +12,45 @@ bindkey -e
 # コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
+
+#=========================================================
+# マニュアル関数
+#=========================================================
+autoload -U peco-select-history
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+source ~/zsh/functions/z.sh
+autoload -U peco-z-search
+zle -N peco-z-search
+bindkey '^@' peco-z-search
+
+source ~/zsh/functions/miya-clipboard
+
+#=========================================================
+# History
+#=========================================================
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+
+# 同じコマンドをヒストリに残さない
+setopt HIST_IGNORE_ALL_DUPS
+
+# スペースから始まるコマンド行はヒストリに残さない
+setopt HIST_IGNORE_SPACE
+
+#=========================================================
+# Python
+#=========================================================
+export PATH=$HOME/tool:$HOME/.pyenv/shims:$PATH
+
+#=========================================================
+# Go
+#=========================================================
+export GOPATH=$HOME/dev
+export PATH=$GOPATH/bin:$PATH
+#=========================================================
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -17,6 +62,7 @@ setopt auto_cd
 # 2つ上、3つ上にも移動できるようにする
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias bx='bx-osx-x64-mainnet'
 
 # cd したら自動的にpushdする
 setopt auto_pushd
@@ -50,7 +96,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
-# [Prompt]
 # export PS1='\W$(__git_ps1) $ '
 
 ############### ターミナルのコマンド受付状態の表示変更
@@ -63,29 +108,6 @@ source ~/.git-prompt.sh
 ##############
 #PROMPT='%~ %# '
 
-# PROMPT="%% "
-# RPROMPT="[%/]"
-# PROMPT2="%_%% "
-# SPROMPT="%r is correct? [n,y,a,e]: "
-
-# Change color when root or ssh
-# case 
-# case ${UID} in
-# 0)
-#     PROMPT="%B%{^[[31m%}%/#%{^[[m%}%b "
-#     PROMPT2="%B%{^[[31m%}%_#%{^[[m%}%b "
-#     SPROMPT="%B%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%}%b "
-#     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-#         PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
-#     ;;
-# *)
-#     PROMPT="%{^[[31m%}%/%%%{^[[m%} "
-#     PROMPT2="%{^[[31m%}%_%%%{^[[m%} "
-#     SPROMPT="%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%} "
-#     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-#         PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
-#     ;;
-# esac
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:*' formats '[%F{green}%b%f]'
@@ -97,25 +119,3 @@ precmd() { vcs_info }
 PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
 RPROMPT='[%~]'
 
-setopt correct
-setopt cdable_vars
-
-export LANG=ja_JP.UTF-8
-
-
-# [History]
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
-
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
-
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-
-
-# [Git]
-# source ~/.git-completion.zsh
-# source ~/.git-prompt.sh
-# PS1='\W$(__git_ps1) % '

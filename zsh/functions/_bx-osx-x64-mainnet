@@ -1,0 +1,93 @@
+#compdef bx-osx-x64-mainnet
+
+_bx-osx-x64-mainnet() {
+	if (( CURRENT == 2 ));then
+		_values \
+		'command menu' \
+		'address-decode[Convert a Bitcoin address to its component parts.]' \
+		'address-embed[Create a Bitcoin address with an embedded record of binary data.]' \
+		'address-encode[Convert a RIPEMD160 value to a Bitcoin address.]' \
+		'address-validate[Validate a Bitcoin address.]' \
+		'base16-decode[Convert a Base16 value to binary data.]' \
+		'base16-encode[Convert binary data to Base16.]' \
+		'base58-decode[Convert a Base58 value to Base16.]' \
+		'base58-encode[Convert a Base16 value to Base58.]' \
+		'base58check-decode[Convert a Base58Check value to Base16.]' \
+		'base58check-encode[Convert a Base16 value to Base58Check.]' \
+		'base64-decode[Convert a Base64 value to binary data.]' \
+		'base64-encode[Convert binary data to Base64.]' \
+		'bitcoin160[Perform a RIPEMD160 hash of a SHA256 hash of Base16 data.]' \
+		'bitcoin256[Perform a SHA256 hash of a SHA256 hash of Base16 data and then reverse the byte order.]' \
+		'btc-to-satoshi[Convert BTC to satoshi.]' \
+		'cert-new[Create a private Curve ZMQ certificate for use with a Libbitcoin/Obelisk server.]' \
+		'cert-public[Create a derived public Curve ZMQ certificate for use with a Libbitcoin/Obelisk server.]' \
+		'ec-add[Calculate the EC function POINT + (SECRET * curve-generator-point).]' \
+		'ec-add-secrets[Calculate the EC function (SECRET + SECRET) % curve-order.]' \
+		'ec-lock[Make a passphrase-protected EC private key (BIP38) from an EC private key.]' \
+		'ec-multiply[Calculate the EC product (POINT * SECRET).]' \
+		'ec-multiply-secrets[Calculate the EC function (SECRET * SECRET) % curve-order.]' \
+		'ec-new[Create a new EC private key from entropy.]' \
+		'ec-to-address[Convert an EC public key to a Bitcoin address.]' \
+		'ec-to-public[Derive the EC public key of an EC private key.]' \
+		'ec-to-wif[Convert an EC private key to a WIF private key.]' \
+		'ec-unlock[Extract the EC private key from a passphrase-protected (BIP38) EC private key.]' \
+		'fetch-balance[Get the balance in satoshi of a Bitcoin address.]' \
+		'fetch-header[Get the block header from the specified hash or height.]' \
+		'fetch-height[Get the last block height.]' \
+		'fetch-history[Get list of output points, values, and spends for a Bitcoin address.]' \
+		'fetch-public-key[Get the EC public key of the address, if it exists on the blockchain.]' \
+		'fetch-stealth[Get metadata on potential payment transactions by stealth prefix.]' \
+		'fetch-tx[Get a transaction by its hash.]' \
+		'fetch-tx-index[Get the block height and index of a transaction.]' \
+		'fetch-utxo[Get enough unspent transaction outputs from a Bitcoin addresses to pay a number of satoshi.]' \
+		'hd-new[Create a new HD (BIP32) private key from entropy.]' \
+		'hd-private[Derive a child HD (BIP32) private key from another HD private key.]' \
+		'hd-public[Derive a child HD (BIP32) public key from another HD public or private key.]' \
+		'hd-to-address[Convert a HD (BIP32) public or private key to a Bitcoin address.]' \
+		'hd-to-ec[Convert a HD (BIP32) public or private key to the equivalent EC public or private key.]' \
+		'hd-to-public[Derive the HD (BIP32) public key of a HD private key.]' \
+		'hd-to-wif[Convert a HD (BIP32) private key to a WIF private key.]' \
+		'help[Get the list of commands.]' \
+		'input-set[Assign a script to an existing transaction input.]' \
+		'input-sign[Create an endorsement for a transaction input.]' \
+		'input-validate[Validate a transaction input endorsement.]' \
+		'message-sign[Create a message signature.]' \
+		'message-validate[Validate a message signature.]' \
+		'mnemonic-new[Create a mnemonic seed (BIP39) from entropy.]' \
+		'mnemonic-to-seed[Convert a mnemonic seed (BIP39) to its numeric representation.]' \
+		'qrcode[Create a QR code image file for a Bitcoin address.]' \
+		'ripemd160[Perform a RIPEMD160 hash of Base16 data.]' \
+		'satoshi-to-btc[Convert satoshi to BTC.]' \
+		'script-decode[Decode a script to plain text tokens.]' \
+		'script-encode[Base16 encode a plain text script.]' \
+		'script-to-address[Create a BIP16 pay-to-script-hash address from a script.]' \
+		'seed[Generate a pseudorandom seed.]' \
+		'send-tx[Broadcast a transaction to the Bitcoin network via an Libbitcoin/Obelisk server.]' \
+		'send-tx-node[Broadcast a transaction to the Bitcoin network via a single Bitcoinnetwork node.]' \
+		'send-tx-p2p[Broadcast a transaction to the Bitcoin network via the Bitcoin peer-to-peer network.]' \
+		'settings[Display the loaded configuration settings.]' \
+		'sha160[Perform a SHA160 (also known as SHA-1) hash of Base16 data.]' \
+		'sha256[Perform a SHA256 hash of Base16 data.]' \
+		'sha512[Perform a SHA512 hash of Base16 data.]' \
+		'stealth-decode[Decode a stealth address.]' \
+		'stealth-encode[Encode a stealth payment address.]' \
+		'stealth-public[Derive the stealth public key necessary to address and to identify a stealth payment.]' \
+		'stealth-secret[Derive the stealth private key necessary to spend a stealth payment.]' \
+		'stealth-shared[Derive the secret shared between an ephemeral key pair and a scan key pair.]' \
+		'tx-decode[Decode a Base16 transaction.]' \
+		'tx-encode[Encode an unsigned transaction as Base16.]' \
+		'tx-sign[Sign a set of transactions using a private key.]' \
+		'uri-decode[Validate and decompose a Bitcoin URI into its parts.]' \
+		'uri-encode[Compose a Bitcoin URI from specified parts.]' \
+		'validate-tx[Determine if a transaction is valid for submission to the blockchain.]' \
+		'watch-address[Watch the network for transactions in which an address participates.]' \
+		'watch-tx[Watch the network for a transaction by hash.]' \
+		'wif-to-ec[Convert a WIF private key to an EC private key.]' \
+		'wif-to-public[Derive the EC public key from a WIF private key.]' \
+		'wrap-decode[Validate the checksum of a Base16 data and recover its version byteand data.]' \
+		'wrap-encode[Add a version byte and checksum to Base16 data.]' \
+
+	else
+#		_files
+	fi
+}

@@ -1,0 +1,14 @@
+#compdef neko
+
+_neko() {
+	if (( CURRENT == 2 ));then
+	_values \
+		'menu' \
+		'aaa[xxx]' \
+		'bbb[@@@]' \
+		
+	else
+		_files
+	fi
+}
+
