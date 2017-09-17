@@ -47,14 +47,22 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-#export PATH=$HOME/tool:$HOME/.pyenv/shims:$PATH
+export PATH=/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
 
 #=========================================================
 # Go
 #=========================================================
-export GOPATH=$HOME/dev
+export GOPATH=$HOME/ghq
 export PATH=$GOPATH/bin:$PATH
 #=========================================================
+
+# lsコマンド カラー表示
+if [ "$(uname)" = 'Darwin' ]; then
+    alias ls='ls -G'			# Mac
+else
+    eval `dircolors ~/.colorrc`
+    alias ls='ls --color=auto'	# Linux or Cygwin
+fi
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
