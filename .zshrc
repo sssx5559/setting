@@ -74,7 +74,7 @@ setopt auto_cd
 # 2つ上、3つ上にも移動できるようにする
 alias ...='cd ../..'
 alias ....='cd ../../..'
-#alias bx='bx-osx-x64-mainnet'
+alias bx='bx-osx-x64-mainnet'
 
 # cd したら自動的にpushdする
 setopt auto_pushd
@@ -106,7 +106,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Git Setting
 #source ~/.git-completion.zsh
 #source ~/.git-completion.bash
-source ~/.git-prompt.sh
+#source ~/.git-prompt.sh
 
 # export PS1='\W$(__git_ps1) $ '
 
@@ -122,12 +122,13 @@ source ~/.git-prompt.sh
 
 autoload -Uz vcs_info
 setopt prompt_subst
-zstyle ':vcs_info:*' formats '[%F{green}%b%f]'
-zstyle ':vcs_info:*' actionformats '[%F{green}%b%f(%F{red}%a%f)]'
+# zstyle ':vcs_info:*' formats '[%F{green}%b%f]'
+# zstyle ':vcs_info:*' actionformats '[%F{green}%b%f(%F{red}%a%f)]'
+zstyle ':vcs_info:*' formats '%F{yellow}[%b]'
 precmd() { vcs_info }
 # PROMPT='%{${fg[yellow]}%}%~%{${reset_color}%}
 # [%n@%md]${vcs_info_msg_0_}
-# %(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)ﻭ < !(;^ω^%) < )%f%b'
-PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
+# %(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)ﻭ > !(;^ω^%) > )%f%b'
+#PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
+PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
 RPROMPT='[%~]'
-
