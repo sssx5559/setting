@@ -60,7 +60,6 @@ export PATH=$GOPATH/bin:$PATH
 if [ "$(uname)" = 'Darwin' ]; then
     alias ls='ls -G'			# Mac
 else
-    eval `dircolors ~/.colorrc`
     alias ls='ls --color=auto'	# Linux or Cygwin
 fi
 
@@ -132,3 +131,5 @@ precmd() { vcs_info }
 #PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
 PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
 RPROMPT='[%~]'
+
+cd $HOME
