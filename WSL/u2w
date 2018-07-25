@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sed -r 's_-(/mnt/)(.)_\U\2:_g' | sed 's_/_\\_g'
+
