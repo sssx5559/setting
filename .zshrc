@@ -47,13 +47,19 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-export PATH=/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
+export PATH=$HOME/anaconda3/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
 
 #=========================================================
 # Go
 #=========================================================
 export GOPATH=$HOME/ghq
 export PATH=$GOPATH/bin:$PATH
+
+#=========================================================
+# R
+#=========================================================
+disable r # デフォルト"r"を無効
+
 #=========================================================
 
 # lsコマンド カラー表示
@@ -132,4 +138,12 @@ precmd() { vcs_info }
 PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
 RPROMPT='[%~]'
 
-cd $HOME
+#=========================================================
+# 仮想通貨
+#=========================================================
+export DROPBOX=~/Dropbox
+export BITCOIN_PRG=$DROPBOX/home/Program/Python/Finance/Bitcoin
+export CRYPT_PATH=$DROPBOX/Document/投資/仮想通貨/
+export CRYPT_2017=$CRYPT_PATH/2017年
+export CRYPT_2018=$CRYPT_PATH/2018年
+
