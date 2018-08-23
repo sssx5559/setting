@@ -49,11 +49,17 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 export PATH=$HOME/anaconda3/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
 
+# pyenv設定
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin/:$PATH
+eval "$(pyenv init -)"
+
+
 #=========================================================
 # Go
 #=========================================================
-export GOPATH=$HOME/ghq
-export PATH=$GOPATH/bin:$PATH
+#export GOPATH=$HOME/ghq
+#export PATH=$GOPATH/bin:$PATH
 
 #=========================================================
 # R
@@ -136,7 +142,7 @@ precmd() { vcs_info }
 # %(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)ﻭ > !(;^ω^%) > )%f%b'
 #PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
 PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
-RPROMPT='[%~]'
+# RPROMPT='[%~]'
 
 #=========================================================
 # 仮想通貨
@@ -147,3 +153,12 @@ export CRYPT_PATH=$DROPBOX/Document/投資/仮想通貨/
 export CRYPT_2017=$CRYPT_PATH/2017年
 export CRYPT_2018=$CRYPT_PATH/2018年
 
+#=========================================================
+# AWS
+#=========================================================
+# source /anaconda/bin/aws_zsh_completer.sh
+
+#=========================================================
+# Cling (C++ インタープリタ)
+#=========================================================
+# export PATH=/usr/local/Cellar/cling/0.5_1/bin:$PATH
