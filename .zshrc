@@ -25,9 +25,22 @@ autoload -U peco-z-search
 zle -N peco-z-search
 bindkey '^@' peco-z-search
 
-autoload -U peco-src
-zle -N peco-src
-bindkey '^]' peco-src
+# autoload -U peco-src
+# zle -N peco-src
+# bindkey '^]' peco-src
+
+autoload -U peco-M-x
+zle -N peco-M-x
+bindkey '\ex' peco-M-x			# M-xに割り当て
+
+autoload -U peco-descbinds
+zle -N peco-descbinds
+bindkey '\ek' peco-descbinds	# M-kに割り当て
+
+# autoload -U peco-books
+# zle -N peco-books
+# bindkey '\eb' peco-books		# M-bに割り当て
+
 
 source ~/zsh/functions/miya-clipboard
 
@@ -47,7 +60,7 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-export PATH=$HOME/anaconda3/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
+export PATH=$HOME/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
 
 # pyenv設定
 export PYENV_ROOT=$HOME/.pyenv
@@ -85,7 +98,7 @@ setopt auto_cd
 # 2つ上、3つ上にも移動できるようにする
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias bx='bx-osx-x64-mainnet'
+#alias bx='bx-osx-x64-mainnet'
 
 # cd したら自動的にpushdする
 setopt auto_pushd
@@ -95,7 +108,7 @@ setopt pushd_ignore_dups
 
 # "~hoge" が特定のパス名に展開されるようにする（ブックマークのようなもの）
 # 例： cd ~hoge と入力すると /long/path/to/hogehoge ディレクトリに移動
-hash -d hoge=/long/path/to/hogehoge
+# hash -d hoge=/long/path/to/hogehoge
 
 # 拡張 glob を有効にする
 # glob とはパス名にマッチするワイルドカードパターンのこと

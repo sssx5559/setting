@@ -1,0 +1,7 @@
+# 電子書籍をパッと開く
+function peco-books () {
+  local book="$(find ~/doc/eBook -type f | sed -e /.DS_Store/d | peco)"
+  if [ -n "$book" ]; then
+    open $book
+  fi
+}

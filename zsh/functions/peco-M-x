@@ -1,0 +1,3 @@
+function peco-M-x () {
+  $(print -l ${(ok)functions} | sed -e /^_/d | peco)
+}
