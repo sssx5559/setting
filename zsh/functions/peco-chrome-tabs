@@ -1,4 +1,4 @@
-# Chrome‚Ìƒ^ƒu‚ğmigemo‚Å
+# Chromeã®ã‚¿ãƒ–ã‚’migemoã§
 function peco-chrome-tabs () {
   local tab_id=$(chrome-cli list tabs | peco --initial-matcher Migemo | sed -e 's/\[//' -e 's/].*//')
   if [ -n "$tab_id" ]; then

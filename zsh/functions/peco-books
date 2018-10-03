@@ -1,6 +1,6 @@
-# “dq‘Ğ‚ğƒpƒb‚ÆŠJ‚­
+# é›»å­æ›¸ç±ã‚’ãƒ‘ãƒƒã¨é–‹ã
 function peco-books () {
-  local book="$(find ~/doc/eBook -type f | sed -e /.DS_Store/d | peco)"
+  local book="$(find ~/Dropbox/é›»å­æ›¸ç± -type f | sed -e /.DS_Store/d | peco)"
   if [ -n "$book" ]; then
     open $book
   fi

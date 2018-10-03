@@ -1,4 +1,4 @@
-# キーバインドの一覧
+# 繧ｭ繝ｼ繝舌う繝ｳ繝峨�ｮ荳隕ｧ
 function peco-descbinds () {
   zle $(bindkey | peco | cut -d " " -f 2)
 }

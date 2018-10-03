@@ -31,15 +31,15 @@ bindkey '^@' peco-z-search
 
 autoload -U peco-M-x
 zle -N peco-M-x
-bindkey '\ex' peco-M-x			# M-xに割り当て
+bindkey '^xx' peco-M-x
 
 autoload -U peco-descbinds
 zle -N peco-descbinds
-bindkey '\ek' peco-descbinds	# M-kに割り当て
+bindkey '^xk' peco-descbinds
 
-# autoload -U peco-books
-# zle -N peco-books
-# bindkey '\eb' peco-books		# M-bに割り当て
+autoload -U peco-books
+zle -N peco-books
+bindkey '^xb' peco-books
 
 
 source ~/zsh/functions/miya-clipboard
