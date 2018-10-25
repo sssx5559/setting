@@ -67,7 +67,6 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin/:$PATH
 eval "$(pyenv init -)"
 
-
 #=========================================================
 # Go
 #=========================================================
@@ -175,3 +174,18 @@ export CRYPT_2018=$CRYPT_PATH/2018年
 # Cling (C++ インタープリタ)
 #=========================================================
 # export PATH=/usr/local/Cellar/cling/0.5_1/bin:$PATH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
