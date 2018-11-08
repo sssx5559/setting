@@ -31,4 +31,11 @@ GIT_PS1_SHOWSTASHSTATE=1
 PS1='\W$(__git_ps1) $ '
 
 # Go
-export GOPATH=$HOME/Program/Go/GOPATH
+export GOPATH=$HOME/ghq
+export PATH=$GOPATH/bin:$PATH
+
+# Bitcoin
+alias bx=bx-osx-x64-mainnet
+
+# Cling (C++ インタープリタ)
+# export PATH=/usr/local/Cellar/cling/0.5_1/bin:$PATH
