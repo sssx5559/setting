@@ -1,0 +1,38 @@
+{
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": true,
+    "latex_envs/latex_envs": false,
+    "code_prettify/autopep8": false,
+    "code_font_size/code_font_size": false,
+    "zenmode/main": false,
+    "cell_filter/cell_filter": true,
+    "livemdpreview/livemdpreview": true,
+    "scratchpad/main": false,
+    "toc2/main": true,
+    "varInspector/main": true,
+    "addbefore/main": false,
+    "autoscroll/main": false,
+    "code_prettify/code_prettify": false,
+    "codemirror_mode_extensions/main": false,
+    "collapsible_headings/main": true,
+    "comment-uncomment/main": false,
+    "datestamper/main": false,
+    "equation-numbering/main": false,
+    "execute_time/ExecuteTime": false,
+    "execution_dependencies/execution_dependencies": false,
+    "exercise/main": false,
+    "export_embedded/main": false,
+    "highlight_selected_word/main": false,
+    "highlighter/highlighter": false,
+    "keyboard_shortcut_editor/main": false,
+    "navigation-hotkeys/main": true,
+    "ruler/main": false,
+    "snippets_menu/main": true
+  },
+  "Notebook": {
+    "Toolbar": true
+  },
+  "toc2": {
+    "number_sections": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Editor": {
+    "codemirror_options": {
+      "keyMap": "emacs",
+      "vimMode": false
+    }
+  },
+  "load_extensions": {
+    "codefolding/edit": false
+  }
+}
