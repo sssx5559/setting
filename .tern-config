@@ -2,5 +2,10 @@
   "libs": [
     "browser",
     "jquery"
-  ]
+  ],
+  "plugins": {
+    "node": {},
+	"doc_comment": {},
+	"es_modules": {}
+  }
 }
