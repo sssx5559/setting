@@ -84,6 +84,7 @@ disable r # デフォルト"r"を無効
 if [ "$(uname)" = 'Darwin' ]; then
     alias ls='ls -G'			# Mac
 else
+    eval `dircolors ~/.colorrc`
     alias ls='ls --color=auto'	# Linux or Cygwin
 fi
 
