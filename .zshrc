@@ -60,12 +60,12 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-export PATH=$HOME/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
+# export PATH=$HOME/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
 
 # pyenv設定
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin/:$PATH
-eval "$(pyenv init -)"
+# export PYENV_ROOT=$HOME/.pyenv
+# export PATH=$PYENV_ROOT/bin/:$PATH
+# eval "$(pyenv init -)"
 
 #=========================================================
 # Go
@@ -81,12 +81,12 @@ disable r # デフォルト"r"を無効
 #=========================================================
 
 # lsコマンド カラー表示
-if [ "$(uname)" = 'Darwin' ]; then
-    alias ls='ls -G'			# Mac
-else
-    eval `dircolors ~/.colorrc`
-    alias ls='ls --color=auto'	# Linux or Cygwin
-fi
+#if [ "$(uname)" = 'Darwin' ]; then
+#    alias ls='ls -G'			# Mac
+#else
+#    eval `dircolors ~/.colorrc`
+#    alias ls='ls --color=auto'	# Linux or Cygwin
+#fi
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -175,18 +175,3 @@ export CRYPT_2018=$CRYPT_PATH/2018年
 # Cling (C++ インタープリタ)
 #=========================================================
 # export PATH=/usr/local/Cellar/cling/0.5_1/bin:$PATH
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
