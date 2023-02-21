@@ -160,11 +160,11 @@ PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{gree
 #=========================================================
 # 仮想通貨
 #=========================================================
-export DROPBOX=~/Dropbox
-export BITCOIN_PRG=$DROPBOX/home/Program/Python/Finance/Bitcoin
-export CRYPT_PATH=$DROPBOX/Document/投資/仮想通貨/
-export CRYPT_2017=$CRYPT_PATH/2017年
-export CRYPT_2018=$CRYPT_PATH/2018年
+# export DROPBOX=~/Dropbox
+# export BITCOIN_PRG=$DROPBOX/home/Program/Python/Finance/Bitcoin
+# export CRYPT_PATH=$DROPBOX/Document/投資/仮想通貨/
+# export CRYPT_2017=$CRYPT_PATH/2017年
+# export CRYPT_2018=$CRYPT_PATH/2018年
 
 #=========================================================
 # AWS
