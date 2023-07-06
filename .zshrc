@@ -98,6 +98,12 @@ setopt auto_cd
 # 2つ上、3つ上にも移動できるようにする
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# 改行コード変換
+alias crlf2lf="grep -Ilrs `printf "\r\n"` . | xargs nkf -Lu --overwrite"
+alias lf2crlf="grep -Ilrs `printf "\n"` . | xargs nkf -Lw --overwrite"
+
+
 #alias bx='bx-osx-x64-mainnet'
 
 # cd したら自動的にpushdする
