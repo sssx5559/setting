@@ -13,6 +13,17 @@ bindkey -e
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
 
+# '='の後も補完してくれる("--prefix=/usr/local" のような入力時に補完)
+setopt magic_equal_subst
+
+#=========================================================
+# ctrl + 矢印で単語単位のカーソル移動
+#=========================================================
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
+
+export WORDCHARS='*?[]~=&;!#$%^(){}<>'
+
 #=========================================================
 # マニュアル関数
 #=========================================================
@@ -127,6 +138,10 @@ zstyle ':completion:*:default' menu select=1
 # こうすると、 Ctrl-W でカーソル前の1単語を削除したとき、 / までで削除が止まる
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
+# Ctrl+←→で単語移動
+#bindkey ";5C" forward-word
+#bindkey ";5D" backward-word
+
 # Git Setting
 #source ~/.git-completion.zsh
 #source ~/.git-completion.bash
@@ -153,23 +168,23 @@ precmd() { vcs_info }
 # PROMPT='%{${fg[yellow]}%}%~%{${reset_color}%}
 # [%n@%md]${vcs_info_msg_0_}
 # %(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)ﻭ > !(;^ω^%) > )%f%b'
-#PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵) > !(;^ω^%) > )%f%b'
-PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
-# RPROMPT='[%~]'
+#PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
+
+if (( $+commands[arch] )); then
+	# Apple Sillicon用
+	PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{yellow}(`uname -m`)%F{green} > !(;^ω^%) > )%f%b'
+else
+	# その他
+	PROMPT='%(?.%B%F{green}.%B%F{blue})%(?!(๑˃̵ᴗ˂̵)${vcs_info_msg_0_}%F{green} > !(;^ω^%) > )%f%b'
+fi
+
 
 #=========================================================
-# 仮想通貨
+# AWS CLI
 #=========================================================
-export DROPBOX=~/Dropbox
-export BITCOIN_PRG=$DROPBOX/home/Program/Python/Finance/Bitcoin
-export CRYPT_PATH=$DROPBOX/Document/投資/仮想通貨/
-export CRYPT_2017=$CRYPT_PATH/2017年
-export CRYPT_2018=$CRYPT_PATH/2018年
-
-#=========================================================
-# AWS
-#=========================================================
-# source /anaconda/bin/aws_zsh_completer.sh
+autoload bashcompinit && bashcompinit
+#autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
 
 #=========================================================
 # Cling (C++ インタープリタ)
@@ -177,7 +192,15 @@ export CRYPT_2018=$CRYPT_PATH/2018年
 # export PATH=/usr/local/Cellar/cling/0.5_1/bin:$PATH
 
 
+#=========================================================
+# jump
+#=========================================================
+eval "$(jump shell)"
 
+#=========================================================
+# asdf (パッケージ管理ツール)
+#=========================================================
+. "$HOME/.asdf/asdf.sh"
 
 
 
