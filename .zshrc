@@ -60,8 +60,6 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-# export PATH=$HOME/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
-
 # pyenv設定
 # export PYENV_ROOT=$HOME/.pyenv
 # export PATH=$PYENV_ROOT/bin/:$PATH
