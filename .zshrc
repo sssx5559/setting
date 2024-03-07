@@ -71,12 +71,10 @@ setopt HIST_IGNORE_SPACE
 #=========================================================
 # Python
 #=========================================================
-export PATH=$HOME/anaconda/bin:$HOME/tool:$HOME/.pyenv/shims:$PATH
-
 # pyenv設定
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin/:$PATH
-eval "$(pyenv init -)"
+# export PYENV_ROOT=$HOME/.pyenv
+# export PATH=$PYENV_ROOT/bin/:$PATH
+# eval "$(pyenv init -)"
 
 #=========================================================
 # Go
@@ -92,12 +90,12 @@ disable r # デフォルト"r"を無効
 #=========================================================
 
 # lsコマンド カラー表示
-if [ "$(uname)" = 'Darwin' ]; then
-    alias ls='ls -G'			# Mac
-else
-    eval `dircolors ~/.colorrc`
-    alias ls='ls --color=auto'	# Linux or Cygwin
-fi
+#if [ "$(uname)" = 'Darwin' ]; then
+#    alias ls='ls -G'			# Mac
+#else
+#    eval `dircolors ~/.colorrc`
+#    alias ls='ls --color=auto'	# Linux or Cygwin
+#fi
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -109,6 +107,12 @@ setopt auto_cd
 # 2つ上、3つ上にも移動できるようにする
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# 改行コード変換
+alias crlf2lf="grep -Ilrs `printf "\r\n"` . | xargs nkf -Lu --overwrite"
+alias lf2crlf="grep -Ilrs `printf "\n"` . | xargs nkf -Lw --overwrite"
+
+
 #alias bx='bx-osx-x64-mainnet'
 
 # cd したら自動的にpushdする
@@ -191,7 +195,6 @@ complete -C '/usr/local/bin/aws_completer' aws
 #=========================================================
 # export PATH=/usr/local/Cellar/cling/0.5_1/bin:$PATH
 
-
 #=========================================================
 # jump
 #=========================================================
@@ -200,16 +203,7 @@ eval "$(jump shell)"
 #=========================================================
 # asdf (パッケージ管理ツール)
 #=========================================================
-. "$HOME/.asdf/asdf.sh"
-
-
-
-
-
-
-
-
-
-
-
+if [[ -f "$HOME/.asdf/asdf.sh" ]] then
+	. "$HOME/.asdf/asdf.sh"
+fi
 

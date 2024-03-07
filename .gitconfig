@@ -4,22 +4,14 @@
 [alias]
 	graph = log --graph --date-order --all --pretty=format:'%h%Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
 	lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
+	co = checkout
+	br = branch
+	st = status
+	l = log --oneline --date=short --pretty=format:'%h %Cgreen%ad %Cblue%cn %Creset%s'
 [color]
 	ui = auto
 [core]
 	excludesfile = /Users/miyazaki/.gitignore_global
-[ghq]
-	root = /Users/shinya/ghq/src
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/miyazaki/.stCommitMsg
-[merge]
-	tool = opendiff
-[gui]
-[gui]
-	recentrepo = /Users/miyazaki/git_project/math.github2
+	quotepath = false
+[credential]
+	helper = store
