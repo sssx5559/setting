@@ -3,15 +3,18 @@
 	email = sssx5559@gmail.com
 [alias]
 	graph = log --graph --date-order --all --pretty=format:'%h%Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
-	lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
+	lol = log --graph --decorate --oneline --all --date=short --abbrev-commit --pretty=format:'%h %Cgreen%ad %Cblue%cn %Creset%s'
+	l = log --oneline --date=short --pretty=format:'%h %Cgreen%ad %Cblue%cn %Creset%s'
 	co = checkout
 	br = branch
 	st = status
-	l = log --oneline --date=short --pretty=format:'%h %Cgreen%ad %Cblue%cn %Creset%s'
+	sw = switch
 [color]
 	ui = auto
 [core]
 	excludesfile = /Users/miyazaki/.gitignore_global
 	quotepath = false
+	autocrlf = false
+	editor = code --wait
 [credential]
 	helper = store
